@@ -1,0 +1,11 @@
+<svg appNode [nodedata]="nodedata" height="55px" width="172" [attr.x]="nodedata.nodeLayout? nodedata.nodeLayout.x : 10"
+     [attr.y]="nodedata.nodeLayout? nodedata.nodeLayout.y :10" class="node">
+  <rect stroke="#000" height="50" width="150" y="2" x="11" stroke-width="1" fill="#fff" rx="10" class="frame"/>
+  <text stroke="#000" text-anchor="start" font-size="12" id="svg_4" y="30" x="24" stroke-width="0" fill="#000000"
+        pointer-events="none">{{ nodedata.name }}
+  </text>
+  <rect stroke="#000" id="svg_5" height="20" width="20" y="15" x="151" fill-opacity="null" rx="3" class="connector"
+        stroke-opacity="null" stroke-width="1" fill="#fff" appLinestart [nodedata]="nodedata"/>
+  <rect id="svg_6" height="20" width="20" y="15" x="1" fill-opacity="null" stroke-opacity="null" rx="5" class="connector"
+        stroke-width="1" stroke="#000" fill="#fff" appLineEnd [nodedata]="nodedata"/>
+</svg>

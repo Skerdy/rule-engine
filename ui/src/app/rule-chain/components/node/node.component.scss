@@ -1,0 +1,11 @@
+.node {
+  .selected {
+    stroke: darkred;
+    stroke-width: 2;
+    fill: gainsboro;
+  }
+}
+
+.connector:hover {
+  fill: rgba(169, 169, 169, 1);
+}

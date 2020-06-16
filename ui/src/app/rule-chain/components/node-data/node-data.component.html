@@ -1,0 +1,10 @@
+<h3 mat-dialog-title>Edit Data</h3>
+<mat-dialog-content>
+  <form [formGroup]="formGroup">
+    <dynamic-material-form [group]="formGroup" [model]="formModel"></dynamic-material-form>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="close(true)">Save</button>
+  <button mat-button color="warn" (click)="close(false)">Cancel</button>
+</mat-dialog-actions>

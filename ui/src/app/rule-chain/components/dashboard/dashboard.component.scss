@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  width: calc(100vw - 25px);
+}
+
+.items-container {
+  width: 200px;
+  min-height: 98vh;
+  margin-right: 20px;
+  overflow-y: auto;
+}
+
+.dropzone-container {
+  flex: 1 1 auto;
+  border: 1px solid transparent;
+  width: 100%;
+  height: inherit;
+  margin: 0;
+  padding: 0;
+  background: repeating-linear-gradient(to right, transparent 0, transparent calc(22px - 1px), #5AD3FF calc(22px - 2px), #5AD3FF 22px),
+  repeating-linear-gradient(to bottom, transparent 0, transparent calc(22px - 1px), #5AD3FF calc(22px - 1px), #5AD3FF 22px) transparent;
+
+  #dropzone {
+    display: inline;
+    width: 100%;
+    min-width: inherit;
+    max-width: inherit;
+    height: 97vh;
+    min-height: inherit;
+    max-height: inherit;
+  }
+}
+
+.actions {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+}
+
+.mat-accordion {
+  .mat-expanded {
+    margin: 2px 0;
+  }
+
+  .mat-expansion-panel {
+    border-radius: 0;
+    background: transparent;
+    box-shadow: unset;
+    .mat-expansion-panel-header {
+      background: rgba(100, 100, 100, 0.5);
+    }
+    ::ng-deep .mat-expansion-panel-body {
+      padding: 0 5px 5px 5px;
+      .node-wrapper {
+        height: 50px;
+        width: 172px;
+        background: transparent;
+        margin: 3px;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<button mat-button (click)="createChain()"> Create</button>
+
+<div class="container">
+  <mat-card *ngFor="let rule of rules" class="rule" [routerLink]="['/rule-chain/rule', rule.id]">
+    <mat-card-header>
+      <mat-card-title> {{ rule.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <!--<p>{{ rule.nodeDocuments | json }}</p>-->
+      <!--<p>{{ rule.nodeConnectionInfos | json }}</p>-->
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-icon-button *ngIf="!rule.started" (click)="$event.stopPropagation();startChain(rule)">
+        <mat-icon class="start">play_circle_filled</mat-icon>
+      </button>
+      <button mat-icon-button *ngIf="rule.started" (click)="$event.stopPropagation();stopChain(rule)">
+        <mat-icon class="stop">stop</mat-icon>
+      </button>
+      <button mat-icon-button *ngIf="rule.started" (click)="$event.stopPropagation();restartChain(rule)">
+        <mat-icon class="stop">replay</mat-icon>
+      </button>
+      <button mat-icon-button (click)="$event.stopPropagation();createChain(rule)">
+        <mat-icon class="edit">edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="$event.stopPropagation();deleteChain(rule)">
+        <mat-icon class="delete">delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

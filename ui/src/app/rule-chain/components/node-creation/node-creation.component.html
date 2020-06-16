@@ -1,0 +1,18 @@
+<h3 mat-dialog-title> Create Chain</h3>
+<div mat-dialog-content class="content">
+  <form [formGroup]="chainForm">
+
+    <mat-form-field appearance="outline">
+      <input matInput formControlName="name" placeholder="Name"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <textarea matInput formControlName="description" rows="5" placeholder="Description"></textarea>
+    </mat-form-field>
+
+  </form>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="saveChain()">Save</button>
+  <button mat-button (click)="close()" color="warn">Cancel</button>
+</mat-dialog-actions>

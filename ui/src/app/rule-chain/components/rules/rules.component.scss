@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  display: inline-block;
+  .rule {
+    display: inline-block;
+    width: calc(33% - 10px);
+    margin: 5px;
+    cursor: pointer;
+
+    .start {
+      color: darkgreen;
+    }
+    .stop {
+      color: darkorange;
+    }
+    .delete {
+      color: darkred;
+    }
+  }
+}

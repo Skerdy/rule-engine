@@ -1,0 +1,35 @@
+<div class="container">
+  <mat-accordion [multi]="true">
+    <a mat-list-item routerLink="/rule-chain/chains">go back</a>
+    <mat-expansion-panel *ngFor="let type of clusteredNodes" [expanded]="true">
+      <mat-expansion-panel-header [collapsedHeight]="'48px'" [expandedHeight]="'48px'">
+        {{ type[0] }}
+      </mat-expansion-panel-header>
+      <div appDraggable [data]="node" *ngFor="let node of type[1]" class="node-wrapper">
+        <app-node-visualization [nodedata]="node"></app-node-visualization>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <div class="dropzone-container">
+    <svg id="dropzone" xmlns="http://www.w3.org/2000/svg" appDroppable version="1.1">
+      <g app-connection *ngFor="let line of lines1" [line]="line"></g>
+      <g app-node *ngFor="let node of elements" [nodedata]="node"></g>
+    </svg>
+
+    <div class="actions">
+      <button mat-fab color="primary" (click)="updateElement()"
+              [disabled]="!(selectedElements&&selectedElements.length === 1&&selectedElements[0].nodeLayout)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-fab color="primary" (click)="deleteElements()" #deletebutton
+              [disabled]="!(selectedElements&&selectedElements.length)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-fab color="primary" (click)="saveChain()">
+        <mat-icon>save</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+
